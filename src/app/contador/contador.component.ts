@@ -15,8 +15,20 @@ export class ContadorComponent {
 
   //nombre:string = "Jonatan Rodríguez";
 
-  persona:Persona = {
-    nombre: 'Jonatan Rodríguez',
-    edad: 30
+  // persona:Persona = {
+  //   nombre: 'Jonatan Rodríguez',
+  //   edad: 30
+  // }
+
+  numero:number  = 1;
+  
+  decrementar()
+  {
+    this.numero --;
+  }
+
+  incrementar()
+  {
+    this.numero += 1;
   }
 }
