@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class FormularioComponent {
 
+  openAlert:boolean =  false;
   mostrarEnConsola(name: string)
   {
     console.log(name);
+    this.openAlert = true;
   }
 }
