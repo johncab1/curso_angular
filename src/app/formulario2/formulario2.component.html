@@ -6,14 +6,21 @@
                 Nombre: 
             </label>
     
-            <input type="text" name="nombre" class="form-control" placeholder="ingrese un nombre" [(ngModel)]="persona.nombre">
-    
+            <input type="text" name="nombre" class="form-control" placeholder="ingrese un nombre" [(ngModel)]="persona.nombre" required #name="ngModel">
+            
+            <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+                El nombre es obligatorio
+            </div>
+
             <div>
                 <label class="form-label">
                     Edad: 
                 </label>
         
-                <input type="text" name="edad" class="form-control" placeholder="ingrese la edad" [(ngModel)]="persona.edad">
+                <input type="text" name="edad" class="form-control" placeholder="ingrese la edad" [(ngModel)]="persona.edad" required #edad="ngModel">
+                <div class="alert alert-danger" [hidden]="edad.valid || edad.pristine">
+                    El nombre es obligatorio
+                </div>
             </div>
 
             <button class="btn btn-primary">
@@ -27,5 +34,7 @@
     
 </div>
 
-
-{{persona | json}}
+<!-- {{name.errors | json}}
+{{name.valid}} -->
+<!-- 
+{{persona | json}} -->
