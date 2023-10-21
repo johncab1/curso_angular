@@ -1,29 +1,40 @@
 <div class="card">
     <div class="card-body">
 
-        <form (ngSubmit)="procesar()">
+        <form (ngSubmit)="procesar()" #formContact="ngForm">
+            <div class="alert alert-danger" [hidden]="(nombre.valid || apellido.pristine ) && (apellido.valid || apellido.pristine)">
+                <ul>
+                    <li [hidden]="nombre.valid || nombre.pristine">
+                        *El nombre es obligatorio
+                    </li>
+                    <li [hidden]="apellido.valid || apellido.pristine">
+                        *El apellido es obligatorio
+                    </li>
+                </ul>
+            </div>
             <label class="form-label">
                 Nombre: 
             </label>
     
-            <input type="text" name="nombre" class="form-control" placeholder="ingrese un nombre" [(ngModel)]="persona.nombre" required #name="ngModel">
+            <input type="text" name="nombre" class="form-control" placeholder="ingrese un nombre" [(ngModel)]="persona.nombre" required #nombre="ngModel">
             
-            <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+            <!-- <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
                 El nombre es obligatorio
-            </div>
+                {{ <script> var id = 0;</script> }}
+            </div> -->
 
             <div>
                 <label class="form-label">
-                    Edad: 
+                    Apellido: 
                 </label>
         
-                <input type="text" name="edad" class="form-control" placeholder="ingrese la edad" [(ngModel)]="persona.edad" required #edad="ngModel">
-                <div class="alert alert-danger" [hidden]="edad.valid || edad.pristine">
+                <input type="text" name="apellido" class="form-control" placeholder="ingrese el apellido" [(ngModel)]="persona.apellido" required #apellido="ngModel">
+                <!-- <div class="alert alert-danger" [hidden]="apellido.valid || apellido.pristine">
                     El nombre es obligatorio
-                </div>
+                </div> -->
             </div>
 
-            <button class="btn btn-primary">
+            <button class="btn btn-primary" [disabled]="formContact.invalid">
                 Enviar
             </button>
         </form>

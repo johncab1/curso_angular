@@ -10,7 +10,7 @@ export class Formulario2Component {
   persona = 
   {
     nombre: '',
-    edad: ''
+    apellido: ''
   }
 
    procesar()
