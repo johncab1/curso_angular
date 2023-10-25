@@ -7,6 +7,10 @@
                 </label>
 
                 <input type="text" [formControl]="name" class="form-control" placeholder="Ingrese su nombre">            
+
+                <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
+                    El nombre es obligatorio
+                </div>
             </div>
 
             <div class="mb-2">
@@ -14,7 +18,11 @@
                     Email
                 </label>
 
-                <input type="text" [formControl]="email" class="form-control" placeholder="Ingrese su email">            
+                <input type="email" [formControl]="email" class="form-control" placeholder="Ingrese su email"> 
+                <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
+                    <span *ngIf="email.errors?.['required']">El email es obligatorio</span>
+                    <span *ngIf="email.errors?.['email']">El email debe ser valido</span>
+                </div>           
             </div>
 
             <button class="btn btn-primary">Enviar</button>
@@ -22,4 +30,5 @@
     </div>
 </div>
 
-{{name.value}}
+<!-- {{name.value}} -->
+{{email.errors | json}}
