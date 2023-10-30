@@ -1,16 +1,16 @@
 <div class="card">
     <div class="card-body">
-        <form>
+        <form [formGroup]="formUser" (ngSubmit)="procesar()">
             <div class="mb-2">
                 <label for="form-label">
                     Nombre
                 </label>
 
-                <input type="text" [formControl]="name" class="form-control" placeholder="Ingrese su nombre">            
+                <input type="text"formControlName="name" class="form-control" placeholder="Ingrese su nombre">            
 
                 <div class="alert alert-danger" [hidden]="name.valid || name.pristine">
                     El nombre es obligatorio
-                </div>
+                </div> 
             </div>
 
             <div class="mb-2">
@@ -18,17 +18,20 @@
                     Email
                 </label>
 
-                <input type="email" [formControl]="email" class="form-control" placeholder="Ingrese su email"> 
+                <input type="email" formControlName="email" class="form-control" placeholder="ingrese el nombre">
+
+                <input type="email" formControlName="email" class="form-control" placeholder="Ingrese su email"> 
                 <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
-                    <span *ngIf="email.errors?.['required']">El email es obligatorio</span>
-                    <span *ngIf="email.errors?.['email']">El email debe ser valido</span>
-                </div>           
+                    <span *ngIf="email?.errors?.['required']">El email es obligatorio</span>
+                    <span *ngIf="email?.errors?.['email']">El email debe ser valido</span>
+                </div>            
             </div>
 
-            <button class="btn btn-primary">Enviar</button>
+            <button class="btn btn-primary" [disabled]="formUser.invalid">Enviar</button>
         </form>
     </div>
 </div>
 
 <!-- {{name.value}} -->
-{{email.errors | json}}
+<!-- {{email.errors | json}} -->
+{{formUser.get('name')?.value }}
