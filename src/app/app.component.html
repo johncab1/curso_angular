@@ -1,6 +1,6 @@
 
 <div class="container">
-    <h1>{{title}}</h1>
+    <h2>Componente padre</h2>
 
     <!-- <app-contador></app-contador> -->
     <!-- <app-botones></app-botones> -->
@@ -10,5 +10,5 @@
     <!-- <app-formulario2></app-formulario2> -->
     <!-- <app-formulario-reactivo></app-formulario-reactivo> -->
     <input type="text" class="form-control" [(ngModel)] ="title">
-    <app-children [title]="title"></app-children>
+    <app-children [(title)]="title"></app-children>
 </div>
