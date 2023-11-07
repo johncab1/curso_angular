@@ -10,6 +10,7 @@ import { SwitchComponent } from './switch/switch.component';
 import { Formulario2Component } from './formulario2/formulario2.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioReactivoComponent } from './formulario-reactivo/formulario-reactivo.component';
+import { ChildrenComponent } from './children/children.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormularioReactivoComponent } from './formulario-reactivo/formulario-re
     BuclesComponent,
     SwitchComponent,
     Formulario2Component,
-    FormularioReactivoComponent
+    FormularioReactivoComponent,
+    ChildrenComponent
   ],
   imports: [
     BrowserModule,

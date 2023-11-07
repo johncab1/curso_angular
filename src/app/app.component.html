@@ -1,11 +1,14 @@
 
 <div class="container">
-    <h1>Curso angular</h1>
+    <h1>{{title}}</h1>
+
     <!-- <app-contador></app-contador> -->
     <!-- <app-botones></app-botones> -->
     <!-- <app-formulario></app-formulario> -->
     <!-- <app-bucles></app-bucles> -->
     <!-- <app-switch></app-switch> -->
     <!-- <app-formulario2></app-formulario2> -->
-    <app-formulario-reactivo></app-formulario-reactivo>
+    <!-- <app-formulario-reactivo></app-formulario-reactivo> -->
+    <input type="text" class="form-control" [(ngModel)] ="title">
+    <app-children [title]="title"></app-children>
 </div>

@@ -18,12 +18,12 @@
                     Email
                 </label>
 
-                <input type="email" formControlName="email" class="form-control" placeholder="ingrese el nombre">
+                
 
                 <input type="email" formControlName="email" class="form-control" placeholder="Ingrese su email"> 
                 <div class="alert alert-danger" [hidden]="email.valid || email.pristine">
-                    <span *ngIf="email?.errors?.['required']">El email es obligatorio</span>
-                    <span *ngIf="email?.errors?.['email']">El email debe ser valido</span>
+                    <span *ngIf="email.errors?.['required']">El email es obligatorio</span>
+                    <span *ngIf="email.errors?.['email']">El email debe ser valido</span>
                 </div>            
             </div>
 
