@@ -6,13 +6,13 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./children.component.css']
 })
 export class ChildrenComponent {
-  @Input() title?: string;
+  @Input() texto?: string;
 
-  @Output() titleChange = new EventEmitter<string>();
+  @Output() textoChange = new EventEmitter<string>();
 
   emitChange()
 {
-  this.titleChange.emit(this.title);
+  this.textoChange.emit(this.texto);
 }
 }
 
